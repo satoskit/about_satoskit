@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1 id="site-title">{{title}}</h1>
+        <h1>{{title}}</h1>
         <div id="menus">
             <p id="menu" v-for="menu in menus" :key="menu.name">{{ menu.name }}</p>
         </div>
@@ -22,8 +22,8 @@ export default {
 }
 </script>
 
-<style>
-#site-title {
+<style scoped>
+h1 {
     padding: 0rem 1rem 0rem 1rem;
 }
 #menus {
