@@ -27,6 +27,7 @@ export default {
 <style scoped>
 * {
     text-decoration: none;
+    color: white;
 }
 h1 {
     padding: 0rem 1rem 0rem 1rem;
@@ -36,6 +37,6 @@ h1 {
     flex-direction: row;
 }
 #menu {
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 1rem 1rem 0rem 1rem;
 }
 </style>
