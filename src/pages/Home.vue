@@ -1,6 +1,6 @@
 <template>
     <div>
-        <welcome-text />
+        <WelcomeText />
     </div>
 </template>
 
