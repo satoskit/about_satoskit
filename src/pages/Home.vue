@@ -1,6 +1,5 @@
 <template>
     <article>
-        <p>About satoskit!</p>
         <welcome-text />
     </article>
 </template>

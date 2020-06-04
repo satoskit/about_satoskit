@@ -3,7 +3,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <HeaderMenu id="header-menu" />
-    <transition><router-view /></transition>
+    <transition><router-view id="contents" /></transition>
   </div>
 </template>
 
@@ -33,5 +33,8 @@ export default {
   display: flex;
   flex-direction: row;
   background-color: tomato;
+}
+#contents {
+  margin: 1rem;
 }
 </style>
