@@ -15,6 +15,21 @@ const router = new Router({
             component: Home
         },
         {
+            path: '/Recipes',
+            name: 'recipes',
+            component: () => import('./pages/Recipes.vue'),
+        },
+        {
+            path: '/Recipes/Recipe/:id',
+            name: 'recipe',
+            component: () => import('./pages/Recipe.vue'),
+        },
+        {
+            path: '/Recipes/NewRecipe',
+            name: 'new-recipe',
+            component: () => import('./pages/NewRecipe.vue')
+        },
+        {
             path: '/Origin',
             name: 'origin',
             component: () => import('./pages/Origin.vue')

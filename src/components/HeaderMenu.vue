@@ -10,15 +10,14 @@
 </template>
 
 <script>
+import { menus } from '../contents/content-data'
+
 export default {
     name: 'HeaderMenu',
     data() {
         return {
             title: 'About satoskit',
-            menus: [ 
-                { name: 'Origin' }, 
-                { name: 'Contact' }
-            ]
+            menus: menus
         }
     }
 }

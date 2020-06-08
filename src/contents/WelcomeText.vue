@@ -10,17 +10,19 @@
 </template>
 
 <script>
+import { tools } from './content-data'
+
 export default {
     name: 'WelcomeText',
     data() {
         return {
-            tools: [
+            tools: tools/*[
                 { name: 'Java (EE, Spring)' },
                 { name: 'JavaScript (React.js, Vue.js, Node.js)' },
                 { name: 'SQL (MySQL, PostgreSQL)' },
                 { name: 'API (RESTful)' },
                 { name: 'Agile (Scrum, Kanban)' }
-            ]
+            ]*/
         }
     }
 }
