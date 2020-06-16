@@ -19,7 +19,7 @@ export const recipes = [
         title: 'A Recipe',
         description: 'A recipe with potatoes and tomatoes.',
         keyWords: [ 'simple', 'potatoes', 'tomatoes' ],
-        image: 'https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg'
+        image: 'https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg',
     },
     {   
         id: 2,                 
@@ -37,6 +37,8 @@ export const recipes = [
 
 export const demoRecipe = {
     title: 'Sweet Recipe',
+    description: 'A recipe with potatoes and tomatoes.',
+    image: 'https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg',
     ingredients: [
         { 
             name: 'milk',
@@ -48,3 +50,8 @@ export const demoRecipe = {
             unit: 'g' },
     ]
 }
+
+export const inputFields = [
+    { name: 'Name of Recipe' },
+    { name: 'Ingredients' }
+]
