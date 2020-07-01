@@ -35,6 +35,11 @@ const router = new Router({
             component: () => import('./pages/Origin.vue')
         },
         {
+            path: '/CV',
+            name: 'cv',
+            component: () => import('./pages/CV.vue')
+        },
+        {
             path: '/Contact',
             name: 'contact',
             component: () => import('./pages/Contact.vue')
