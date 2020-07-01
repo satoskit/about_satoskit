@@ -37,12 +37,7 @@
         </tr>
     </table>
         <button @click="addClicked">Add More</button>
-        <p>{{ingredientNames}}
-        {{ingredientAmount}}
-        {{ingredientUnit}}
-        {{totalIngredients}}</p>
-        {{amountEntered}}
-
+    <h4>{{steps}}</h4>
 </div>
 </template>
 
@@ -59,6 +54,9 @@ export default {
             ingredientAmount: [],
             ingredientUnit: [],
             amountEntered: false,
+
+            steps: 'Steps',
+            totalSteps: 1,
         }
     },
     methods: {
