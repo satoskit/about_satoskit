@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { demoRecipe } from '../contents/content-data'
+import { demoRecipe } from '../contents/recipe-data'
 
 export default {
     name: 'Recipe',
