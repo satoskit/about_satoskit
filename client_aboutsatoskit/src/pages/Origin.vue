@@ -6,8 +6,8 @@
         <map name="worldmap">
             <area shape="circle" coords="250, 113, 20" href="" alt="Japan!" title="Japan!" v-on:click="onclick">
         </map>
-        <div v-if="clicked">
-            <p>Japan!</p>
+        <div id="japan" v-if="clicked">
+            <h3>Japan! &#127800;</h3>
             <p></p>
         </div>
     </div>
@@ -24,12 +24,15 @@ export default {
     methods: {
         onclick(e) {
             e.preventDefault()
-            this.clicked = true
+            this.clicked = !this.clicked
+            if(this.clicked == true) {
+                document.getElementById('japan').scrollIntoView()
+            }
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
