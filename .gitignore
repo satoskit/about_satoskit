@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+*.md 
+!README.md
 
 # local env files
 .env.local
