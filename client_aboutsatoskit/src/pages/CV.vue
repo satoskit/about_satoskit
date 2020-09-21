@@ -1,12 +1,8 @@
 <template>
   <div id="cv">
     <h2>CV of Satomi Okuyama</h2>
-    <Profile />
     <div class="blocks">
-        <div class="block" id="keywords">
-            <h3>Keywords</h3>
-            <p v-for="keyword in keywords" :key="keyword">{{ keyword }}</p>
-        </div>
+        <Profile />
         <div class="block">
             <h3>Competences</h3>
             <div class="inBlocks">
@@ -65,6 +61,10 @@ export default {
 </script>
 
 <style scoped>
+#id {
+    display: flex;
+    flex-direction: column;
+}
 .blocks, .inBlocks {
     display: flex;
     flex-wrap: wrap;
