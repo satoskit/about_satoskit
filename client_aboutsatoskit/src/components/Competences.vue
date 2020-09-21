@@ -1,5 +1,5 @@
 <template>
-  <div id="competences">
+  <div class="cv-left-div" id="competences">
       <h3>Competences</h3>
       <div id="competences-block">
         <TileCompetence title="language" />
@@ -24,15 +24,10 @@ export default {
 </script>
 
 <style scoped>
-#competences {
-    padding: 1rem;
-}
 #competences-block {
     display: flex;
     padding-left: 0.5rem;
     /* flex-direction: column; */
 }
-h3 {
-    border-bottom: 0.4rem solid tomato;
-}
+
 </style>

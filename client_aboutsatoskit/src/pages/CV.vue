@@ -1,9 +1,12 @@
 <template>
   <div id="cv">
     <h2>CV of Satomi Okuyama</h2>
-    <div class="blocks">
+    <div class="cv-blocks">
         <Profile />
-        <Competences />
+        <div class="cv-inBlocks">
+            <Competences />
+            <Education />
+        </div>
     </div>
     
     
@@ -15,9 +18,10 @@ import { keywords } from '../contents/content-data'
 import { competences } from '../contents/content-data'
 import Profile from '../components/Profile.vue'
 import Competences from '../components/Competences.vue'
+import Education from '../components/Education.vue'
 
 export default {
-    components: { Profile, Competences },
+    components: { Profile, Competences, Education },
     data() {
         return {
             keywords: keywords,
@@ -36,24 +40,24 @@ export default {
 }
 </script>
 
-<style scoped>
-#id {
+<style>
+#cv {
     display: flex;
     flex-direction: column;
 }
-.blocks, .inBlocks {
+.cv-blocks {
     display: flex;
     flex-wrap: wrap;
 }
-.block {
-    margin: 1rem;
+.cv-inBlocks {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
 }
-.inBlock {
-    /* margin-right: 1rem; */
-    margin-left: 1rem;
+.cv-left-div {
+  padding: 1rem;
 }
-#keywords > p {
-    margin-left: 0.5rem;
+.cv-left-div > h3 {
+    border-bottom: 0.4rem solid tomato;
 }
-
 </style>
