@@ -1,6 +1,7 @@
 <template>
   <div id="cv">
     <h2>CV of Satomi Okuyama</h2>
+    <Profile />
     <div class="blocks">
         <div class="block" id="keywords">
             <h3>Keywords</h3>
@@ -41,8 +42,10 @@
 <script>
 import { keywords } from '../contents/content-data'
 import { competences } from '../contents/content-data'
+import Profile from '../components/Profile.vue'
 
 export default {
+    components: { Profile },
     data() {
         return {
             keywords: keywords,
