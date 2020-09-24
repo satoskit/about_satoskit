@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="tile-competence">
       <h4>{{capitalizeFirstLetter}}</h4>
       <p v-for="$title in competences[titles]" :key="$title">{{$title.name}}: <font-awesome-icon :icon="$title.icon" /></p>
   </div>

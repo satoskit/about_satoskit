@@ -1,14 +1,14 @@
 <template>
   <div id="profile">
-      <h4>Name: {{profile.name}}</h4>
+      <h3><span>Name:</span> {{profile.name}}</h3>
 
-      <h4>Languages</h4>
-      <p class="p-loop" v-for="language in profile.languages" :key=language>{{language.language}}: {{language.level}}</p>
+      <h3>Languages</h3>
+      <p class="p-loop" v-for="language in profile.languages" :key=language><b>{{language.language}}</b>: {{language.level}}</p>
 
-      <h4>Key Words</h4>
+      <h3>Key Words</h3>
       <p class="p-loop" v-for="keyword in profile.keywords" :key=keyword>{{keyword}}</p>
 
-      <h4>Interests</h4>
+      <h3>Interests</h3>
       <p>{{profile.interests.join(', ')}}</p>
   </div>
 </template>
@@ -29,6 +29,7 @@ export default {
 
 <style scoped>
 #profile {
+    min-width: 190px;
     width: 25%;
     background-color: rgba(255, 99, 71, 0.4);
     padding: 1rem;
@@ -38,5 +39,6 @@ export default {
 }
 p {
     margin-left: 1rem;
+    margin-right: 0.8rem;
 }
 </style>

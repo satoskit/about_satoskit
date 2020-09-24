@@ -24,6 +24,9 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+    margin-bottom: 1rem;
+}
 #competences-block {
     display: flex;
     padding-left: 0.5rem;

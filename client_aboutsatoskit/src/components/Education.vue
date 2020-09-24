@@ -1,11 +1,11 @@
 <template>
-  <div class="cv-left-div">
+  <div class="cv-left-div" id="education">
       <h3>Education</h3>
       <table v-for="edu in education" :key="edu">
           <tr>
               <td class="time-column">{{edu.year}}<br>{{edu.length}}</td>
-              <td class="main-column"><strong>{{edu.title}}</strong>, {{edu.school}}, {{edu.location}}   <br>
-                <span v-for="detail in edu.details" :key="detail">{{detail}}</span></td>
+              <td class="cv-edu-exp-main-td"><strong>{{edu.title}}</strong>, {{edu.school}}, {{edu.location}}   <br>
+                <span v-for="detail in edu.details" :key="detail">{{detail}}. </span></td>
           </tr>
       </table>
   </div>
