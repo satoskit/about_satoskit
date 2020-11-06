@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  backend:
+    container_name: backend_aboutsatoskit_1
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment: 
+      DATABASE_URLL : postgres://postgres:postgres@database:5432/aboutsatoskit
+    ports:
+      - 5000:5000
+    depends_on: 
+      - database
+    networks: 
+      - backend
+
+  database: 
+    # image: postgres
+    container_name: postgres_aboutsatoskit_1
+    build: 
+      context: .
+      dockerfile: Dockerfile-db
+    env_file: config.env 
+    ports:
+      - 5432:5432
+    networks: 
+      - backend
+    volumes:
+      - db:/var/lib/postgersql/data
+  
+networks: 
+  backend:
+
+volumes: 
+  db:

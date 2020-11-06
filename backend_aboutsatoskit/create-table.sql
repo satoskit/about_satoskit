@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS sampletable (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(20)
+);
