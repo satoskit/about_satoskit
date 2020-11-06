@@ -16,12 +16,20 @@ const router = new Router({
         },
         {
             path: '/Recipes',
+<<<<<<< HEAD
             name: 'recipe-root',
+=======
+            name: 'recipes',
+>>>>>>> 71c71526923520e268ab544181e61c553fa581eb
             component: () => import('./pages/recipe/RecipeIndex.vue'),
             children: [
                 {
                     path: '',
+<<<<<<< HEAD
                     name: 'recipes',
+=======
+                    name: 'recipetop',
+>>>>>>> 71c71526923520e268ab544181e61c553fa581eb
                     component: () => import('./pages/recipe/Recipes.vue')
                 },
                 {
@@ -35,6 +43,14 @@ const router = new Router({
                     component: () => import('./pages/recipe/NewRecipe.vue')
                 },
             ]
+<<<<<<< HEAD
+=======
+        },
+        {
+            path: '/Recipes/NewRecipe',
+            name: 'new-recipe',
+            component: () => import('./pages/recipe/NewRecipe.vue')
+>>>>>>> 71c71526923520e268ab544181e61c553fa581eb
         },
         {
             path: '/Origin',
