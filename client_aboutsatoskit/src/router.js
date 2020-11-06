@@ -16,12 +16,12 @@ const router = new Router({
         },
         {
             path: '/Recipes',
-            name: 'recipes',
+            name: 'recipe-root',
             component: () => import('./pages/recipe/RecipeIndex.vue'),
             children: [
                 {
                     path: '',
-                    name: 'recipetop',
+                    name: 'recipes',
                     component: () => import('./pages/recipe/Recipes.vue')
                 },
                 {
@@ -37,30 +37,37 @@ const router = new Router({
             ]
         },
         {
-            path: '/Recipes/NewRecipe',
-            name: 'new-recipe',
-            component: () => import('./pages/recipe/NewRecipe.vue')
-        },
-        {
             path: '/Origin',
             name: 'origin',
             component: () => import('./pages/Origin.vue')
         },
         {
             path: '/CV',
-            name: 'cv',
-            component: () => import('./pages/CV.vue')
+            name: 'cv-root',
+            component: () => import('./pages/cv/CVIndex.vue'),
+            children: [
+                {
+                    path: '',
+                    name: 'cv',
+                    component: () => import('./pages/cv/CVTopMenu.vue')
+                },
+                {
+                    path: 'CV',
+                    name: 'cv',
+                    component: () => import('./pages/cv/CV.vue')
+                },
+                {
+                    path: 'CoverLetter',
+                    name: 'coverletter',
+                    component: () => import('./pages/cv/CoverLetter.vue')
+                }
+            ]
         },
         {
             path: '/Contact',
             name: 'contact',
             component: () => import('./pages/Contact.vue')
         },
-        {
-            path: '/coverletter',
-            name: 'coverletter',
-            component: () => import('./pages/CoverLetter.vue')
-        }
     ]
 })
 
