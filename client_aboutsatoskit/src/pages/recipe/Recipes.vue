@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import RecipeCard from '../contents/RecipeCard.vue'
+import RecipeCard from '../../contents/RecipeCard.vue'
 export default {
     name: 'Recipes',
     components: {

@@ -1,7 +1,7 @@
 <template>
 <div>
   <h2>Recipe!</h2>
-  <p>{{fetchedId}}</p>
+  <p>{{fetchedId}} or {{$route.params.id}}</p>
   <h3>{{demoRecipe.title}}</h3>
 
   <p>Ingredients</p>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { demoRecipe } from '../contents/recipe-data'
+import { demoRecipe } from '../../contents/recipe-data'
 
 export default {
     name: 'Recipe',
