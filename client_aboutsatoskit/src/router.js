@@ -17,17 +17,29 @@ const router = new Router({
         {
             path: '/Recipes',
             name: 'recipes',
-            component: () => import('./pages/Recipes.vue'),
-        },
-        {
-            path: '/Recipes/Recipe/:id',
-            name: 'recipe',
-            component: () => import('./pages/Recipe.vue'),
+            component: () => import('./pages/recipe/RecipeIndex.vue'),
+            children: [
+                {
+                    path: '',
+                    name: 'recipetop',
+                    component: () => import('./pages/recipe/Recipes.vue')
+                },
+                {
+                    path: 'Recipe/:id',
+                    name: 'recipeid',
+                    component: () => import('./pages/recipe/Recipe.vue')
+                },
+                {
+                    path: 'NewRecipe',
+                    name: 'new-recipe',
+                    component: () => import('./pages/recipe/NewRecipe.vue')
+                },
+            ]
         },
         {
             path: '/Recipes/NewRecipe',
             name: 'new-recipe',
-            component: () => import('./pages/NewRecipe.vue')
+            component: () => import('./pages/recipe/NewRecipe.vue')
         },
         {
             path: '/Origin',
