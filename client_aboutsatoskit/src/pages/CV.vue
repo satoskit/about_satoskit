@@ -1,7 +1,7 @@
 <template>
   <div id="cv">
-    <p id="not-print"><em>Right click -> Print</em> to get the CV printed or in PDF!</p>
-    <h2 id="cv-header">CV of Satomi Okuyama</h2>
+    <button id="not-print" v-on:click="doPrint">Print this CV</button>
+    <h2 id="cv-header">CV</h2>
     <div class="cv-blocks">
         <Profile />
         <div class="cv-inBlocks">
@@ -10,8 +10,6 @@
             <Experiences />
         </div>
     </div>
-    
-    
   </div>
 </template>
 
@@ -32,6 +30,9 @@ export default {
         }
     },
     methods: {
+        doPrint() {
+            window.print()
+        },
         // not work
         convertToIcons(n) {
             switch (n) {
@@ -82,6 +83,9 @@ export default {
 #not-print {
     float: right;
     margin-right: 1rem;
+}
+button#not-print  {
+    padding: 0.4rem;
 }
 /*******************/
 /** for printing **/

@@ -43,6 +43,11 @@ const router = new Router({
             path: '/Contact',
             name: 'contact',
             component: () => import('./pages/Contact.vue')
+        },
+        {
+            path: '/coverletter',
+            name: 'coverletter',
+            component: () => import('./pages/CoverLetter.vue')
         }
     ]
 })

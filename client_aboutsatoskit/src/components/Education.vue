@@ -1,6 +1,7 @@
 <template>
   <div class="cv-left-div" id="education">
       <h3>Education</h3>
+      <h4>This section is working in progress...</h4>
       <table v-for="edu in education" :key="edu">
           <tr>
               <td class="time-column">{{edu.year}}<br>{{edu.length}}</td>
