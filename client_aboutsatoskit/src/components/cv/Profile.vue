@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { profile } from '../contents/content-data'
+import { profile } from '../../contents/content-data'
 export default {
     data() {
         return {

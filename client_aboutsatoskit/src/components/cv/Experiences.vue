@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { employment } from '../contents/content-data'
+import { employment } from './../../contents/content-data'
 export default {
     data() {
         return {

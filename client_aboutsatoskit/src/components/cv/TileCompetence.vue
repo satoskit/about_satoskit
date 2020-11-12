@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { competences } from '../contents/content-data'
+import { competences } from './../../contents/content-data'
 export default {
     props: {
         title: {

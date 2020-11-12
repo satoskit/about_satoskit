@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import { keywords } from '../../contents/content-data'
-import { competences } from '../../contents/content-data'
-import Profile from '../../components/Profile.vue'
-import Competences from '../../components/Competences.vue'
-import Education from '../../components/Education.vue'
-import Experiences from '../../components/Experiences.vue'
+import { keywords } from './../../contents/content-data'
+import { competences } from './../../contents/content-data'
+import Profile from './../../components/cv/Profile.vue'
+import Competences from './../../components/cv/Competences.vue'
+import Education from './../../components/cv/Education.vue'
+import Experiences from './../../components/cv/Experiences.vue'
 
 export default {
     components: { Profile, Competences, Education, Experiences },

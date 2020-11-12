@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { recipes } from './recipe-data'
+import { recipes } from './../../contents/recipe-data'
 
 export default {
     name: 'RecipeCard',

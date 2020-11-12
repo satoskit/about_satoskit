@@ -25,14 +25,11 @@
 
           <p contenteditable="contenteditable" spellcheck="true" :lang="selectedLang" v-if="selectedLang === 'en'">{{enMessage}}</p>
           <p contenteditable="contenteditable" spellcheck="true" :lang="selectedLang" v-else-if="selectedLang === 'sv'">{{svMessage}}</p>
-          <!-- <p v-for="paragraph in coverletterex" :key="paragraph">{{paragraph}}</p>
-          <p>Med vänliga hälsningar, <br>Satomi Okuyama </p> -->
       </div>
   </div>
 </template>
 
 <script>
-// import Vue from 'vue'
 export default {
     data() {
         return {

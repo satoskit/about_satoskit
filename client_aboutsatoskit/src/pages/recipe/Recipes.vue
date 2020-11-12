@@ -1,20 +1,14 @@
 <template>
 <div>
     <h3>Recipes!</h3>
+    <p>This is a demo page to disaply/create recipes [WIP].</p>
     <button><router-link :to="`/Recipes/NewRecipe`">Add a new recipe!</router-link></button>
-    <!-- <div id="recipe-cards"> -->
-        <!-- <RecipeCard recipeTitle="A Recipe" />
-        <RecipeCard recipeTitle="Delicious Recipe" />
-        <RecipeCard recipeTitle="Sweet Recipe" />
-        <RecipeCard recipeTitle="Spicy Recipe" />
-        <RecipeCard recipeTitle="Easy Recipe" /> -->
         <RecipeCard />            
-    <!-- </div> -->
 </div>
 </template>
 
 <script>
-import RecipeCard from '../../contents/RecipeCard.vue'
+import RecipeCard from '../../components/recipe/RecipeCard.vue'
 export default {
     name: 'Recipes',
     components: {

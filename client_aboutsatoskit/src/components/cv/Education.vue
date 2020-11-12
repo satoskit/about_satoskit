@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { education } from '../contents/content-data'
+import { education } from './../../contents/content-data'
 export default {
     data() {
         return {
