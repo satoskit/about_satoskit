@@ -23,19 +23,22 @@ export default {
 }
 </script>
 
-<style scoped>
-* {
-    text-decoration: none;
-    color: white;
-}
-h1 {
-    padding: 0rem 1rem 0rem 1rem;
-}
-#menus {
-    display: flex;
-    flex-direction: row;
-}
-#menu {
-    padding: 1rem 1rem 0rem 1rem;
-}
+<style scoped lang="sass">
+* 
+  background-color: $theme-color
+  text-decoration: none
+  color: $header-text-color
+  display: flex
+  flex-direction: row
+
+h1 
+  padding: 0rem 1rem 0rem 1rem
+
+#menus 
+  display: flex
+  flex-direction: row
+
+#menu 
+  padding: 1rem 1rem 0rem 1rem
+
 </style>

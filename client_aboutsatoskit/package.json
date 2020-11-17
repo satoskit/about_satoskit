@@ -19,6 +19,8 @@
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "core-js": "^3.7.0",
     "express": "^4.17.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9"
   },
