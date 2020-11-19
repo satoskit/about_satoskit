@@ -27,18 +27,19 @@ export default {
 }
 </script>
 
-<style scoped>
-#profile {
-    min-width: 190px;
-    width: 25%;
-    background-color: rgba(255, 99, 71, 0.4);
-    padding: 1rem;
-}
-.p-loop {
-    line-height: 80%;
-}
-p {
-    margin-left: 1rem;
-    margin-right: 0.8rem;
-}
+<style scoped lang="sass">
+#profile 
+    min-width: 190px
+    width: 25%
+    background-color: $theme-color
+    color: $theme-text-color
+    padding: 1rem
+
+.p-loop 
+    line-height: 80%
+
+p 
+    margin-left: 1rem
+    margin-right: 0.8rem
+
 </style>

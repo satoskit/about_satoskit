@@ -22,12 +22,12 @@ button
   padding: 1rem
   font-size: 1.5rem
   cursor: pointer
-  color: $header-text-color
+  color: $theme-title-color
   background-color: $theme-color
   border: none
   
 a
   text-decoration: none
 a:visited
-  color: $header-text-color
+  color: $theme-title-color
 </style>

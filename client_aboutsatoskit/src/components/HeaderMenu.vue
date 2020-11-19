@@ -27,7 +27,7 @@ export default {
 * 
   background-color: $theme-color
   text-decoration: none
-  color: $header-text-color
+  color: $theme-title-color
   display: flex
   flex-direction: row
 
