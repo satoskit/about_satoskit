@@ -79,6 +79,7 @@ export default {
 #cv-header {
     min-width: 30rem;
     display: inline !important;
+    margin-left: 1rem;
 }
 #not-print {
     float: right;
@@ -95,19 +96,19 @@ button#not-print  {
         display: none !important;
     }
     #cv {
-        /* width: 2480px;
-        height: 3508px; */
+        width: 210mm;
+        height: 297mm;
         /* overflow: auto; */
         position: relative;
         /* top: 10px; */
     }
     #profile {
-        width: 190px;
+        width: 20%;
         /* float: left; */
         display: inline-block;
     }
     .cv-inBlocks {
-        width: 450px;
+        width: 65%;
         /* float: left; */
         display: inline-block;
     }
