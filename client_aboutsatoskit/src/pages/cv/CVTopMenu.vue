@@ -1,7 +1,7 @@
 <template>
-  <div>
-      <button><router-link :to="`/CV/CV`">View CV</router-link></button>
-      <button><router-link :to="`/CV/CoverLetter`">Generate Cover Letter</router-link></button>
+  <div id="cv-top">
+      <router-link :to="`/CV/CV`" tag="button">View CV</router-link>
+      <router-link :to="`/CV/CoverLetter`" tag="button">Generate Cover Letter</router-link>
   </div>
 </template>
 
@@ -11,6 +11,23 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="sass">
+#cv-top
 
+button
+  display: flex
+  margin-left: auto
+  margin-right: auto
+  margin-top: 1rem
+  padding: 1rem
+  font-size: 1.5rem
+  cursor: pointer
+  color: $header-text-color
+  background-color: $theme-color
+  border: none
+  
+a
+  text-decoration: none
+a:visited
+  color: $header-text-color
 </style>

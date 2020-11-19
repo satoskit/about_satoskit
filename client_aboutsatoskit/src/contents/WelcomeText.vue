@@ -1,6 +1,6 @@
 <template>
 <article>
-    <p>Welcome to About satoskit!</p>
+    <h2>Welcome to About satoskit!</h2>
     <p>Satoskit is a software developer, currently located in Sweden. 
         Studied mainly Java at Java Enterprise Developer program at Yrgo in Göteborg, Sweden.
     </p>
@@ -29,6 +29,5 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="sass">
 </style>
