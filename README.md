@@ -1,6 +1,6 @@
 ## Demo Web Application
 
-> Working in progress...
+> Work in progress...
 
 To see the frontend, go to the client directory and run:  
 `npm run serve`
