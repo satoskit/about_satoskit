@@ -1,15 +1,15 @@
 version: '3.4'
 
 services:
-  frontend:
-    container_name: frontend_aboutsatoskit_1
-    build: 
-      context: ./client_aboutsatoskit
-      dockerfile: Dockerfile
-    ports:
-      - 8080:8080
-    networks: 
-      - backend
+  # frontend:
+  #   container_name: frontend_aboutsatoskit_1
+  #   build: 
+  #     context: ./client_aboutsatoskit
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 8080:8080
+  #   networks: 
+  #     - backend
 
   backend:
     container_name: backend_aboutsatoskit_1
