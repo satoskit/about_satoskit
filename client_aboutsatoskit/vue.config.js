@@ -6,5 +6,7 @@ module.exports = {
         }
       }
     },
-    publicPath: '/about_satoskit/'
+    publicPath: process.env.NODE_ENV === 'production' 
+    ? '/about_satoskit/'
+    : '/'
   }
