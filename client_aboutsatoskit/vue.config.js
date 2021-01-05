@@ -5,5 +5,6 @@ module.exports = {
           additionalData: `@import "@/styles/_variables.sass";`
         }
       }
-    }
+    },
+    publicPath: '/about_satoskit/'
   }
