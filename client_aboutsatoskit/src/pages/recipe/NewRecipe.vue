@@ -1,9 +1,9 @@
 <template>
 <div>
-    <h3>New Recipe</h3>
+    <h3>Create a New Recipe</h3>
     <h4>Title of the recipe</h4>
     <input v-model="recipeTitle" type="text">
-    <h4>Give a short description of the recipe </h4>
+    <h4>A short description of the recipe </h4>
     <textarea v-model="description" name="description" id="" cols="80" rows="5"></textarea>
     <h4>Ingredients</h4>
     <table>
@@ -11,13 +11,13 @@
             <th><input v-model="ingredientName" type="text" placeholder="Name"></th>
             <th id="ingredientInput"><input v-model="ingredientAmount" type="number" placeholder="Amount in number"></th>
             <th id="ingredientInput"><input v-model="ingredientUnit" type="text" placeholder="Unit name (ex. g)"></th>
-            <th><button @click="addClicked">Add the Ingredient</button></th>
+            <th><button @click="addClicked">Add this ingredient</button></th>
         </tr>
     <!-- display error message when the ingredient name is empty -->
         <tr v-if="ingredientErrorName">
             <td colspan="4" id="errorMessage">Please enter a name of the ingredient!</td>
         </tr>
-        <tr v-else-if="ingredientErrorUnit">
+        <tr v-if="ingredientErrorUnit">
             <td colspan="4" id="errorMessage">Please enter a unit name of the ingredient!</td>
         </tr>
         <tr v-else><p> </p></tr>
@@ -34,7 +34,9 @@
             <td>{{item.unit}}</td>
             <td><button @click="removeIngredient(item.ingredient_name)"><font-awesome-icon icon="trash" /></button></td>
         </tr>
+        <tr v-if="ingredients.length == 0"><p> </p></tr>
     </table>
+    
     <h4>Steps</h4>
 </div>
 </template>
@@ -80,7 +82,14 @@ export default {
     },
     methods: {
         addClicked() {
-            if(this.ingredientName != '') {
+            if(this.ingredientName === '') {
+                this.ingredientErrorName = true
+            } 
+            if(this.ingredientUnit === '') { 
+                this.ingredientErrorUnit = true
+            } 
+            
+            if(this.ingredientErrorName !== '' && this.ingredientUnit !== '') {
                 this.ingredients.push({ 
                     ingredient_name: this.ingredientName, 
                     amount: this.ingredientAmount,
@@ -90,8 +99,6 @@ export default {
                 this.ingredientName = ''
                 this.ingredientAmount = ''
                 this.ingredientUnit = ''
-            } else {
-                this.ingredientErrorName = true
             }
         },
         removeIngredient(nameToRemove) {
@@ -133,7 +140,7 @@ th, td {/*#ingredientTable2 */
     text-align: left;
     padding-left: 3rem;
 }
-#ingredientsTitle th{
+#ingredientsTitle th {
     border-bottom: 0.1rem solid grey;
 }
 </style>
