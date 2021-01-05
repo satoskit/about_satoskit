@@ -1,0 +1,1 @@
+export const recipeUrl = `http://localhost:5000/api/recipe`

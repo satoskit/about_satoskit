@@ -1,100 +1,139 @@
 <template>
 <div>
     <h3>New Recipe</h3>
-    <h4>{{name}}</h4>
-    <input v-model="recipeName" type="text">
-    <h4>{{description}}</h4>
-    <textarea name="description" id="" cols="80" rows="5"></textarea>
-    <h4>{{ingredients}}</h4>
-    <!-- <div id="ingredients">
-        <div class="ingredient">
-            <p>Name</p>
-            <p>Amount</p>
-            <p>Unit</p>
-        </div>
-        <div class="ingredient">
-            
-            <input v-model="ingredientName" type="text">
-        </div>
-        <div class="ingredient">
-            <input v-model="ingredientAmount" type="number">
-        </div>
-        <div class="ingredient">
-            <input v-model="ingredientUnit" type="text">
-        </div>
-    </div> -->
+    <h4>Title of the recipe</h4>
+    <input v-model="recipeTitle" type="text">
+    <h4>Give a short description of the recipe </h4>
+    <textarea v-model="description" name="description" id="" cols="80" rows="5"></textarea>
+    <h4>Ingredients</h4>
     <table>
         <tr>
+            <th><input v-model="ingredientName" type="text" placeholder="Name"></th>
+            <th id="ingredientInput"><input v-model="ingredientAmount" type="number" placeholder="Amount in number"></th>
+            <th id="ingredientInput"><input v-model="ingredientUnit" type="text" placeholder="Unit name (ex. g)"></th>
+            <th><button @click="addClicked">Add the Ingredient</button></th>
+        </tr>
+    <!-- display error message when the ingredient name is empty -->
+        <tr v-if="ingredientErrorName">
+            <td colspan="4" id="errorMessage">Please enter a name of the ingredient!</td>
+        </tr>
+        <tr v-else-if="ingredientErrorUnit">
+            <td colspan="4" id="errorMessage">Please enter a unit name of the ingredient!</td>
+        </tr>
+        <tr v-else><p> </p></tr>
+    
+        <tr id="ingredientsTitle">
             <th>Name</th>
             <th>Amount</th>
             <th>Unit</th>
+            <th></th>
         </tr>
-        <tr v-for="n in totalIngredients" :key="n">
-            <th><input v-model="ingredientNames[n-1]" type="text" required=true></th>
-            <th><input v-model="ingredientAmount[n-1]" type="number"></th>
-            <th><input v-model="ingredientUnit[n-1]" type="text" required="amountEntered"></th>
-            <th><button @click="removeIngredient(n-1)"><font-awesome-icon icon="trash" /></button></th>
+        <tr id="ingredientsRows" v-for="item in ingredients" :key="item.ingredient_name">
+            <td>{{item.ingredient_name}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.unit}}</td>
+            <td><button @click="removeIngredient(item.ingredient_name)"><font-awesome-icon icon="trash" /></button></td>
         </tr>
     </table>
-        <button @click="addClicked">Add More</button>
-    <h4>{{steps}}</h4>
+    <h4>Steps</h4>
 </div>
 </template>
 
 <script>
+import { recipeUrl } from '../../urls'
 export default {
     name: 'NewRecipe',
     data() {
         return {
-            name: 'Name of Recipe',
-            description: 'Description of Recipe',
-            ingredients: 'Ingredients',
-            totalIngredients: 1,
-            ingredientNames: [],
-            ingredientAmount: [],
-            ingredientUnit: [],
-            amountEntered: false,
+            recipeUrl: recipeUrl,
 
-            steps: 'Steps',
+            recipeId: '',
+            recipeTitle: '',
+            description: '',
+            ingredients: [],
+            ingredientErrorName: false,
+            ingredientErrorUnit: false,
+            ingredientName: '',
+            ingredientAmount: '',
+            ingredientUnit: '',
+
             totalSteps: 1,
         }
     },
+    created() {
+        const header = { "Content-Type": "application/json" }
+        console.log(recipeUrl + '/latest-recipe-id')
+        fetch(recipeUrl + '/latest-recipe-id', { header })
+            .then(async response => {
+                const data = await response.json()
+                console.log(data)
+                if(!response.ok) {
+                    const error = (data && data.message) || response.statusText
+                    return Promise.reject(error)
+                }
+                this.recipeId = data.latest_recipe_id + 1
+            })
+            .catch(error => {
+                this.errorMessage = error
+                console.error('There was an error!', error)
+            })
+    },
     methods: {
         addClicked() {
-            this.totalIngredients ++
-            if(this.ingredientNames.length !== this.ingredientAmount.length) {
-                this.ingredientAmount.push('null')
-            }
-            if(this.ingredientNames.length !== this.ingredientUnit.length) {
-                this.ingredientUnit.push('')
+            if(this.ingredientName != '') {
+                this.ingredients.push({ 
+                    ingredient_name: this.ingredientName, 
+                    amount: this.ingredientAmount,
+                    unit: this.ingredientUnit
+                })
+
+                this.ingredientName = ''
+                this.ingredientAmount = ''
+                this.ingredientUnit = ''
+            } else {
+                this.ingredientErrorName = true
             }
         },
-        removeIngredient(n) {
-            this.ingredientNames = this.ingredientNames.filter((item, index) => index !== n)
-            this.ingredientAmount = this.ingredientAmount.filter((item, index) => index !== n)
-            this.ingredientUnit = this.ingredientUnit.filter((item, index) => index !== n)
-            
-            if(this.totalIngredients !== 1) { this.totalIngredients -- }
-        }
+        removeIngredient(nameToRemove) {
+            this.ingredients = this.ingredients.filter(obj => obj.ingredient_name !== nameToRemove)
+        },
     },
     watch: {
-        ingredientAmount() {
-            if(this.ingredientAmount !== null) {
-                this.amountEntered = true
+        ingredientName() {
+            if(this.ingredientName.length >= 1) {
+                this.ingredientErrorName = false
+            }
+        },
+        ingredientUnit() {
+            if(this.ingredientUnit.length >= 1) {
+                this.ingredientErrorUnit = false
             }
         }
+        
+
     }
 }
 </script>
 
 <style scoped>
-#ingredients {
-    display: flex;
-    flex-wrap: wrap;
+table {
+    width: 40rem;
+    border-collapse: collapse;
 }
-.ingredient {
-    /* flex-direction: column; */
-    float: left;
+th:first-child {/*#ingredientTable1, #ingredientTable td {*/
     width: 12rem;
+}
+#ingredientInput input {
+    width: 8rem;
+}
+th, td {/*#ingredientTable2 */
+    text-align: center;
+}
+#errorMessage {
+    text-align: left;
+    padding-left: 3rem;
+}
+#ingredientsTitle th{
+    border-bottom: 0.1rem solid grey;
 }
 </style>
