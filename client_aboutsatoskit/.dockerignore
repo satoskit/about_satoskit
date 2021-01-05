@@ -1,2 +1,4 @@
 node_modules
 .gitignore
+
+content-data-private.js
