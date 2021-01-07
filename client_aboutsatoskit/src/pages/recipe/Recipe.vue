@@ -1,7 +1,7 @@
 <template>
 <div>
   <h2>Recipe!</h2>
-  <p>{{fetchedId}} or {{$route.params.id}}</p>
+  <p>{{fetchedId}} and {{demoRecipe.id}}</p>
   <h3>{{demoRecipe.title}}</h3>
 
   <p>Ingredients</p>

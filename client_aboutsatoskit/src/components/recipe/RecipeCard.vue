@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { recipes } from './../../contents/recipe-data'
+import { demoRecipeIndex } from './../../contents/recipe-data'
 
 export default {
     name: 'RecipeCard',
@@ -26,7 +26,7 @@ export default {
     },
     data () {
         return {
-            recipes: recipes
+            recipes: demoRecipeIndex
         }
     }
 }
