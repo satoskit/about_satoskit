@@ -37,7 +37,9 @@
         <tr v-if="ingredients.length == 0"><p> </p></tr>
     </table>
     
-    <h4>Steps</h4>
+    <!-- <h4>Steps</h4> -->
+    <p> </p>
+    <button @click="createClicked">Create</button>
 </div>
 </template>
 
@@ -73,6 +75,7 @@ export default {
                     const error = (data && data.message) || response.statusText
                     return Promise.reject(error)
                 }
+                /** TODO need to be fixed **/
                 this.recipeId = data.latest_recipe_id + 1
             })
             .catch(error => {
@@ -104,6 +107,9 @@ export default {
         removeIngredient(nameToRemove) {
             this.ingredients = this.ingredients.filter(obj => obj.ingredient_name !== nameToRemove)
         },
+        createClicked() {
+            // TODO: add recipe to the database
+        }
     },
     watch: {
         ingredientName() {
