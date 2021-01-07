@@ -10,7 +10,7 @@ const bodyParser = require('body-parser')
 const dotenv = require('dotenv').config()
 const cors = require('cors')
 const corsOption = {
-    origin: 'http://localhost:5000'
+    origin: 'http://localhost:8080'//'http://localhost:5000'
 }
 
 const queries = require('./src/database/dev/demo-queries')

@@ -27,7 +27,7 @@ module.exports = {
 
     getRecipeById : `SELECT * FROM recipes WHERE recipe_id = $1`
     ,
-    getAllItems : `SELECT * FROM $1`,
+    getBiggestId: `SELECT MAX(recipe_id) as latest_recipe_id FROM recipes`,
 
     getRecipeById : `
         SELECT * FROM recipes
